@@ -1,12 +1,12 @@
-import { Dispatch, FormEvent, forwardRef, SetStateAction } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { CircleArrowUp } from "lucide-react";
+import { getArtifactContent } from "@/contexts/utils";
+import { useToast } from "@/hooks/use-toast";
+import { isArtifactCodeContent } from "@/lib/artifact_content_types";
 import { cn } from "@/lib/utils";
 import { ArtifactV3 } from "@/types";
-import { getArtifactContent } from "@/contexts/utils";
-import { isArtifactCodeContent } from "@/lib/artifact_content_types";
-import { useToast } from "@/hooks/use-toast";
+import { CircleArrowUp } from "lucide-react";
+import { Dispatch, FormEvent, forwardRef, SetStateAction } from "react";
 
 interface AskOpenCanvasProps {
   isInputVisible: boolean;
@@ -96,7 +96,7 @@ export const AskOpenCanvas = forwardRef<HTMLDivElement, AskOpenCanvasProps>(
           >
             <Input
               className="w-full transition-all duration-300 focus:ring-0 ease-in-out p-1 focus:outline-none border-0 focus-visible:ring-0"
-              placeholder="Ask Open Canvas..."
+              placeholder="Ask Leastsquare Canvas..."
               autoFocus
               value={inputValue}
               onChange={(e) => setInputValue(e.target.value)}

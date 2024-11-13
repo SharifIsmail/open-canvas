@@ -1,19 +1,19 @@
+import { useGraphContext } from "@/contexts/GraphContext";
+import { useToast } from "@/hooks/use-toast";
+import { ProgrammingLanguageOptions } from "@/types";
 import { ThreadPrimitive } from "@assistant-ui/react";
+import { Thread as ThreadType } from "@langchain/langgraph-sdk";
 import { ArrowDownIcon, SquarePen } from "lucide-react";
 import { Dispatch, FC, SetStateAction } from "react";
-import { TooltipIconButton } from "../ui/assistant-ui/tooltip-icon-button";
-import { ProgrammingLanguageOptions } from "@/types";
-import ModelSelector from "./model-selector";
 import { ReflectionsDialog } from "../reflections-dialog/ReflectionsDialog";
-import { ThreadHistory } from "./thread-history";
+import { useLangSmithLinkToolUI } from "../tool-hooks/LangSmithLinkToolUI";
+import { TooltipIconButton } from "../ui/assistant-ui/tooltip-icon-button";
 import { TighterText } from "../ui/header";
-import { Thread as ThreadType } from "@langchain/langgraph-sdk";
-import { ThreadWelcome } from "./welcome";
 import { Composer } from "./composer";
 import { AssistantMessage, UserMessage } from "./messages";
-import { useToast } from "@/hooks/use-toast";
-import { useLangSmithLinkToolUI } from "../tool-hooks/LangSmithLinkToolUI";
-import { useGraphContext } from "@/contexts/GraphContext";
+import ModelSelector from "./model-selector";
+import { ThreadHistory } from "./thread-history";
+import { ThreadWelcome } from "./welcome";
 
 const ThreadScrollToBottom: FC = () => {
   return (
@@ -87,7 +87,7 @@ export const Thread: FC<ThreadProps> = (props: ThreadProps) => {
           <ThreadHistory
             switchSelectedThreadCallback={switchSelectedThreadCallback}
           />
-          <TighterText className="text-xl">Open Canvas</TighterText>
+          <TighterText className="text-xl">Leastsquare Canvas</TighterText>
           {!hasChatStarted && (
             <ModelSelector
               chatStarted={false}

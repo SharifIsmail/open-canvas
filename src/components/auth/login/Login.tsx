@@ -1,12 +1,12 @@
+import { createSupabaseClient } from "@/lib/supabase/client";
 import { cn } from "@/lib/utils";
 import NextImage from "next/image";
 import Link from "next/link";
+import { useRouter, useSearchParams } from "next/navigation";
+import { useEffect, useState } from "react";
 import { buttonVariants } from "../../ui/button";
-import { UserAuthForm } from "./user-auth-form-login";
 import { login } from "./actions";
-import { createSupabaseClient } from "@/lib/supabase/client";
-import { useSearchParams, useRouter } from "next/navigation";
-import { useState, useEffect } from "react";
+import { UserAuthForm } from "./user-auth-form-login";
 
 export interface LoginWithEmailInput {
   email: string;
@@ -92,7 +92,7 @@ export function Login() {
               alt="LangChain Logo"
               className="rounded-full"
             />
-            Open Canvas
+            Leastsquare Canvas
           </div>
         </div>
         <div className="lg:p-8">

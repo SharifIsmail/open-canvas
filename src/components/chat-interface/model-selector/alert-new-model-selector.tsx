@@ -1,14 +1,14 @@
 "use client";
 
-import { motion, AnimatePresence } from "framer-motion";
 import LLMIcon from "@/components/icons/svg/LLMIcon.svg";
-import NextImage from "next/image";
-import { LS_HAS_SEEN_MODEL_DROPDOWN_ALERT } from "@/constants";
-import { Dispatch, SetStateAction, useEffect } from "react";
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
-import { ExternalLink, X } from "lucide-react";
-import { TighterText } from "@/components/ui/header";
 import { TooltipIconButton } from "@/components/ui/assistant-ui/tooltip-icon-button";
+import { TighterText } from "@/components/ui/header";
+import { LS_HAS_SEEN_MODEL_DROPDOWN_ALERT } from "@/constants";
+import { AnimatePresence, motion } from "framer-motion";
+import { ExternalLink, X } from "lucide-react";
+import NextImage from "next/image";
+import { Dispatch, SetStateAction, useEffect } from "react";
 
 export const AlertNewModelSelectorFeature = ({
   chatStarted,
@@ -73,8 +73,8 @@ export const AlertNewModelSelectorFeature = ({
               </AlertTitle>
               <AlertDescription className="inline-flex items-center gap-1 flex-wrap mt-2">
                 <p>
-                  Open Canvas now supports customizing your LLM model! Click the
-                  dropdown above to pick a model from{" "}
+                  Leastsquare Canvas now supports customizing your LLM model!
+                  Click the dropdown above to pick a model from{" "}
                   <a
                     href="https://fireworks.ai/"
                     target="_blank"
